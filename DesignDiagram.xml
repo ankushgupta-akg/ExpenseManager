@@ -1,0 +1,85 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36" version="29.5.5">
+  <diagram name="AI Expense System" id="0">
+    <mxGraphModel dx="29419" dy="21931" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="EXWtDsCXc4-AGQPemrcN-16" edge="1" parent="1" source="start" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="phone" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="start" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;" value="User Input (WhatsApp)" vertex="1">
+          <mxGeometry height="60" width="160" x="40" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="EXWtDsCXc4-AGQPemrcN-17" edge="1" parent="1" source="phone" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="userCheck">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="phone" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Extract phoneNumber" vertex="1">
+          <mxGeometry height="60" width="130" x="240" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="EXWtDsCXc4-AGQPemrcN-18" edge="1" parent="1" source="userCheck" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" target="register">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="userCheck" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;" value="Fetch User from DB" vertex="1">
+          <mxGeometry height="80" width="180" x="440" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="register" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;" value="Registration Flow (State Machine, NO AI)" vertex="1">
+          <mxGeometry height="80" width="240" x="660" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="session" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Check Redis Session" vertex="1">
+          <mxGeometry height="60" width="200" x="660" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="EXWtDsCXc4-AGQPemrcN-19" edge="1" parent="1" source="state" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="session" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="state" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;" value="State Machine Handler (NO AI for yes/no)" vertex="1">
+          <mxGeometry height="70" width="240" x="900" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="intent" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Intent Detection (Deterministic)" vertex="1">
+          <mxGeometry height="60" width="240" x="900" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="normalize" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Normalize Input" vertex="1">
+          <mxGeometry height="60" width="200" x="1180" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="participants" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Extract Participants (NO AI)" vertex="1">
+          <mxGeometry height="60" width="240" x="1400" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="context" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Context Injection (Minimal)" vertex="1">
+          <mxGeometry height="60" width="220" x="1660" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="ai" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;" value="AI Call (Extraction Only)" vertex="1">
+          <mxGeometry height="60" width="200" x="1900" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="validate" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;" value="Validation (STRICT)" vertex="1">
+          <mxGeometry height="60" width="200" x="2120" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="fallback" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Fallback Engine (Equal / Partial Split)" vertex="1">
+          <mxGeometry height="60" width="260" x="2340" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="logic" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Business Logic (Split, Balance)" vertex="1">
+          <mxGeometry height="60" width="240" x="2620" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="db" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="DB Persistence" vertex="1">
+          <mxGeometry height="60" width="180" x="2880" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="response" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;" value="Response to User" vertex="1">
+          <mxGeometry height="60" width="180" x="3080" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="b1oot0yusLLbIpXn3u2v-1" edge="1" parent="1" source="start" style="endArrow=block;" target="phone" />
+        <mxCell id="b1oot0yusLLbIpXn3u2v-2" edge="1" parent="1" source="phone" style="endArrow=block;" target="userCheck" />
+        <mxCell id="b1oot0yusLLbIpXn3u2v-3" edge="1" parent="1" source="userCheck" style="endArrow=block;" target="register" />
+        <mxCell id="b1oot0yusLLbIpXn3u2v-4" edge="1" parent="1" source="userCheck" style="endArrow=block;" target="session" />
+        <mxCell id="b1oot0yusLLbIpXn3u2v-5" edge="1" parent="1" source="session" style="endArrow=block;" target="state" />
+        <mxCell id="b1oot0yusLLbIpXn3u2v-6" edge="1" parent="1" source="state" style="endArrow=block;" target="intent" />
+        <mxCell id="b1oot0yusLLbIpXn3u2v-7" edge="1" parent="1" source="intent" style="endArrow=block;" target="normalize" />
+        <mxCell id="b1oot0yusLLbIpXn3u2v-8" edge="1" parent="1" source="normalize" style="endArrow=block;" target="participants" />
+        <mxCell id="b1oot0yusLLbIpXn3u2v-9" edge="1" parent="1" source="participants" style="endArrow=block;" target="context" />
+        <mxCell id="b1oot0yusLLbIpXn3u2v-10" edge="1" parent="1" source="context" style="endArrow=block;" target="ai" />
+        <mxCell id="b1oot0yusLLbIpXn3u2v-11" edge="1" parent="1" source="ai" style="endArrow=block;" target="validate" />
+        <mxCell id="b1oot0yusLLbIpXn3u2v-12" edge="1" parent="1" source="validate" style="endArrow=block;" target="fallback" />
+        <mxCell id="b1oot0yusLLbIpXn3u2v-13" edge="1" parent="1" source="fallback" style="endArrow=block;" target="logic" />
+        <mxCell id="b1oot0yusLLbIpXn3u2v-14" edge="1" parent="1" source="logic" style="endArrow=block;" target="db" />
+        <mxCell id="b1oot0yusLLbIpXn3u2v-15" edge="1" parent="1" source="db" style="endArrow=block;" target="response" />
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
